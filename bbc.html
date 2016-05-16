@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Eli's BBC </title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style type="text/css">
+
+    body {
+      margin: 0;
+      font-family: arial, helvetica, sans-serif;
+    }
+
+    #topbar {
+      background-color: #7A0000;
+      width: 100%;
+      height: 45px;
+      color:white;
+    }
+
+    #bottombar {
+      background-color: #7A0000;
+      width: 100%;
+      height: 45px;
+      color:white;
+    }
+
+    #bottombar p {
+      text-align: center;
+      margin: 0;
+      padding-top: 15px;
+    }
+
+    .fixedwidth {
+      width: 1050px;
+      height: 45px;
+      margin: 0 auto;
+    }
+
+    #logodiv {
+      padding-top: 9px;
+      float: left;
+      border-right: 1px solid #990000;
+      height: 36px;
+      padding-right: 10px;
+    }
+
+    #signindiv {
+      font-weight:bold;
+      padding: 9px 80px 12px 20px;
+      font-size: .9em;
+      float:left;
+      border-right: 1px solid #990000;
+
+    }
+
+    #signindiv img {
+      position:relative;
+      top: 3px;
+      margin-right: 5px;
+    }
+
+    #topmenudiv {
+      float: left;
+    }
+
+    #topmenudiv ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    #topmenudiv li{
+      list-style: none;
+      float: left;
+      font-weight: bold;
+      font-size: 0.9em;
+      border-right: 1px solid #990000;
+      height: 100%;
+      padding: 15px 20px 14px 20px;
+    }
+
+    #searchdiv {
+      float:left;
+      padding: 9px 0 0 10px;
+    }
+
+    #searchdiv input {
+      height: 25px;
+      width: 150px;
+      border: none;
+      font-weight: bold;
+      padding-left: 7px;
+      font-size: 10px;
+      background-image: url("images/magnify.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+    }
+
+    .break {
+      clear: both;
+    }
+
+    #newsbar {
+      background-color: #990000;
+      width: 100%;
+      height: 90px;
+      color:white;
+    }
+
+    #bottomnewsbar {
+      background-color: #990000;
+      width: 100%;
+      height: 50px;
+      color:white;
+    }
+
+    #newsbar p {
+      margin: 0;
+      padding-top: 10px;
+      float: left;
+    }
+
+    #newsheader {
+      font-size: 3em;
+    }
+
+    #uk {
+      font-size: .5em;
+      padding-left: 15px;
+    }
+
+    #rss {
+      float: right;
+      margin-top: 30px;
+    }
+
+    #rss img {
+      height: 14px;
+    }
+
+    #topicmenu {
+
+    }
+
+    #topicmenu ul {
+      background-color: #3E0C0D;
+      margin: 0;
+      padding: 5px 0 0 5px;
+      height: 20px;
+    }
+
+    #topicmenu li {
+      list-style: none;
+      font-size: .8em;
+      border-right: 1px solid #990000;
+      float: left;
+      padding: 0 5px 0 5px;
+    }
+
+    .selected {
+      background-color: #EDEDED;
+      color: #666666;
+      height: 20px;
+      position: relative;
+      top:-5px;
+      padding-top: 5px !important;
+    }
+
+    #content {
+      width: 100%;
+      color: #535353;
+      font-size: .8em;
+    }
+
+    .date {
+      font-weight: bold;
+    }
+
+    h1 {
+      color: #1F4F82;
+      font-size: 2.5em;
+    }
+
+    .headlineimage {
+      height: 265px;
+      float: left;
+    }
+
+    .newsitem {
+      position: relative;
+      left: 10px;
+      top: -15px;
+      width: 260px;
+      float:left;
+    }
+
+    .newsitem a {
+      color:#1F4F82;
+      text-decoration: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .video {
+      background-image: url("images/triangle.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding-left: 20px;
+    }
+
+    .links {
+      line-height: 1.8em;
+    }
+
+    #watchlisten {
+      background-color: #EEEEEE;
+      float: right;
+      width: 369px;
+      position: relative;
+      top: -50px;
+    }
+
+    #watchlisten h2 {
+      color: #505050;
+      margin: 10px 0 10px 20px;
+      font-size: 1.8em;
+    }
+
+    .boxes {
+      float: right;
+      margin: 12px 12px 0 3px;
+
+
+    }
+
+    .leftarrow {
+      float: left;
+      border-right: 1px solid white;
+    }
+
+    .wlblock {
+      float: left;
+      width: 157px;
+      background-color: #D1700E;
+      border-right: 1px solid white;
+    }
+
+    .wlblock p {
+      margin: 7px;
+    }
+
+    .wlblock a {
+      color: white;
+    }
+
+    .rightarrow {
+      float: right;
+    }
+
+    .extra {
+      float: left;
+      font-weight: bold;
+      font-size: 1.5em;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .extra li {
+
+      list-style: none;
+      background-image: url("images/live.png");
+      background-repeat: no-repeat;
+      background-position: left center;
+      padding: 10px 0 10px 50px;
+    }
+
+    .bb {
+      border-bottom: 1px solid #DDDDDD;
+    }
+
+
+
+  </style>
+
+</head>
+
+<body>
+
+  <div id="container">
+
+    <div id="topbar">
+
+      <div class="fixedwidth">
+
+        <div id="logodiv">
+          <img src="images/bbcLogo.png" />
+        </div>
+
+        <div id="signindiv">
+          <img src="images/signin.png">Sign In
+        </div>
+
+        <div id="topmenudiv">
+
+          <ul>
+            <li>News</li>
+            <li>Sport</li>
+            <li>Weather</li>
+            <li>iPlayer</li>
+            <li>TV</li>
+            <li>Radio</li>
+            <li>More...</li>
+          </ul>
+
+        </div>
+
+        <div id="searchdiv">
+
+          <input type="text" placeholder="Search">
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="break"></div>
+
+    <div id="newsbar">
+
+      <div class="fixedwidth">
+
+        <p id="newsheader">NEWS<span id="uk">UK</span></p>
+
+        <div id="rss">
+          RSS <img src="images/rss.png"/>
+        </div>
+
+        <div class="break"></div>
+
+        <div id="topicmenu">
+
+          <ul>
+
+            <li>Home</li>
+            <li>World</li>
+            <li class="selected">UK</li>
+            <li>England</li>
+            <li>N. Ireland</li>
+            <li>Scotland</li>
+            <li>Wales</li>
+            <li>Business</li>
+            <li>Politics</li>
+            <li>Health</li>
+            <li>Education</li>
+            <li>Sci/Enviroment</li>
+            <li>Technology</li>
+            <li style="border-right: none">Entertainment & Arts</li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="break"></div>
+
+    <div id="content">
+      <div class="fixedwidth">
+        <p><span class="date"> May 13 2016 </span> Last updated at 15:23</p>
+
+        <h1> Research Shows Concentrated Practice Over Time Cannot Fail but Produce Results </h1>
+
+        <img class="headlineimage" src="images/headlineimage.jpg"/>
+
+        <div class="newsitem">
+          <p> Here is some text to fill some space next to the image of the dude
+            and to fulfill the requirements for making it look legit.  </p>
+
+          <p class="links"> <a class="video" href="">Why are pollutions levels so high?</a><br/>
+          <a class="video" href="">Who did that don't make no sense?</a><br/>
+          <a class="video" href="">The buffalo don't roam no more!</a><br/>
+          <a href="">Who dunnit? IDK do you? Woah whaaat?</a><br/>
+          <a class="video" href="">Who did that don't make no sense?</a></p>
+
+        </div>
+
+        <div id="watchlisten">
+
+          <div class="boxes">
+            <img src="images/squarered.png";/>
+            <img src="images/squareblack.png";/>
+            <img src="images/squareblack.png";/>
+            <img src="images/squareblack.png";/>
+          </div>
+
+          <h2> Watch/Listen </h2>
+
+          <img src="images/leftarrow.png" class="leftarrow"/>
+
+          <div class="wlblock">
+            <img src="images/pic1.png" class="pic1"/>
+            <p><a href=""> Here is Titanic letter could fetch $100000000</a></p>
+          </div>
+
+          <div class="wlblock">
+            <img src="images/pic2.png" class="pic2"/>
+            <p><a href=""> More text about the image above here here </a></p>
+          </div>
+
+          <img src="images/rightarrow.png" class="rightarrow"/>
+
+          <ul class="extra">
+            <li class="bb"> <a href=""> BBC News Channel </a></li>
+            <li class="bb"> <a href=""> Radio 5 Live </a></li>
+            <li> <a href=""> Osborne here text here here </a></li>
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="break"></div>
+
+
+    <div id="bottomnewsbar"></div>
+    <div id="bottombar">
+      <p>Practice HTML/CSS | udemy Complete Web Developer Course | Eli Staton 2016</p>
+    </div>
+
+  </div>
+
+
+
+</body>
+</html>
